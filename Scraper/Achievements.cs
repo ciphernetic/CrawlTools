@@ -23,5 +23,19 @@ namespace Crawl.Scraper
 		{
 			return wins.Count >= 10;
 		}
+
+		public static bool IsGreatPlayer(Version version, List<Win> wins)
+		{
+			return GreatPlayerProgress(version, wins).Count == 0;
+		}
+
+		public static List<Species> GreatPlayerProgress(Version version, List<Win> wins)
+		{
+			return (from versionSpecies in Utils.GetAllSpecies(version)
+					where !(from playerSpecies in PlayerUtils.GetWonSpecies(wins)
+							select playerSpecies.ShortName)
+						   .Contains(versionSpecies.ShortName)
+					select versionSpecies).ToList();
+		}
 	}
 }
