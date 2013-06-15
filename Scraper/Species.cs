@@ -18,7 +18,7 @@ namespace Crawl.Scraper
 		/// <summary>
 		/// First playable version.
 		/// </summary>
-		public string FirstVersion { get; private set; }
+		public Version FirstVersion { get; private set; }
 		/// <summary>
 		/// Still playable.
 		/// </summary>
@@ -31,7 +31,7 @@ namespace Crawl.Scraper
 		/// <param name="shortName">Abbreviation.</param>
 		/// <param name="firstVersion">First playable version.</param>
 		/// <param name="active">Still playable.</param>
-		public Species(string name, string shortName, string firstVersion,
+		public Species(string name, string shortName, Version firstVersion,
 			bool active)
 		{
 			Name = name;
@@ -41,13 +41,26 @@ namespace Crawl.Scraper
 		}
 
 		/// <summary>
+		/// Constructor with string version.
+		/// </summary>
+		/// <param name="name">Full name.</param>
+		/// <param name="shortName">Abbreviation.</param>
+		/// <param name="firstVersion">First playable version.</param>
+		/// <param name="active">Still playable.</param>
+		public Species(string name, string shortName, string firstVersion,
+			bool active)
+			: this(name, shortName, new Version(firstVersion), active)
+		{
+		}
+
+		/// <summary>
 		/// Constructor with default version of 0.0.0.
 		/// </summary>
 		/// <param name="name">Full name.</param>
 		/// <param name="shortName">Abbreviation.</param>
 		/// <param name="active">Still playable.</param>
 		public Species(string name, string shortName, bool active)
-			: this(name, shortName, "0.1.0", active)
+			: this(name, shortName, new Version("0.1.0"), active)
 		{
 		}
 	}
