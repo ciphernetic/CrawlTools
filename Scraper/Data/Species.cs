@@ -48,5 +48,19 @@ namespace Crawl.Scraper.Data
 					{"Gr", new C.Species("Gargoyle", "Gr", "0.13.0", true)}
 				};
 		}
+
+		/// <summary>
+		/// Dictionary to map old abbreviations to new ones.
+		/// </summary>
+		/// <returns>Dictionary of abbreviations maps.</returns>
+		public static Dictionary<string, string> SpeciesMap()
+		{
+			return new Dictionary<string, string>()
+				{
+					{"Ke", "Te"},
+					{"DG", "Dg"},
+					{"DS", "Ds"}
+				};
+		}
 	}
 }
