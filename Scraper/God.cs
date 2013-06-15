@@ -27,9 +27,10 @@ namespace Crawl.Scraper
 		Cheibriados = 32768,
 		Elyvilon = 65536,
 		Yredelemnul = 131072,
+		Fedhas = 262144,
 
 		All = NoGod | Makhleb | Trog | Okawaru | Beogh | SifMuna | NemelexXobeh
 			| TheShiningOne | Vehumet | Kikubaaqudgha | Jiyva | Ashenzari | Xom
-			| Lugonu | Zin | Cheibriados | Elyvilon | Yredelemnul
+			| Lugonu | Zin | Cheibriados | Elyvilon | Yredelemnul | Fedhas
 	}
 }
