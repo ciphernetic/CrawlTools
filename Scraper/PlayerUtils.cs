@@ -30,5 +30,31 @@ namespace Crawl.Scraper
 
 			return rtn;
 		}
+
+		/// <summary>
+		/// Returns all distinctly won species.
+		/// </summary>
+		/// <param name="wins">All wins to analyze.</param>
+		/// <returns>Won species.</returns>
+		public static IEnumerable<Species> GetWonSpecies(IEnumerable<Win> wins)
+		{
+			Dictionary<string, Species> rtn = new Dictionary<string, Species>();
+
+			foreach(string c in wins
+				.Select(w => w.Character.Substring(0, 2)).Distinct())
+			{
+				string species = Data.Species.SpeciesMap().ContainsKey(c)
+					? Data.Species.SpeciesMap()[c]
+					: c;
+
+				// ensures that no duplicates from renames get added.
+				if(!rtn.ContainsKey(species))
+				{
+					rtn.Add(species, Data.Species.GetSpecies()[species]);
+				}
+			}
+
+			return rtn.Values;
+		}
 	}
 }
