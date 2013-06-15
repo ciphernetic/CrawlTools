@@ -59,7 +59,7 @@ namespace Crawl.Scraper
 					(win.ChildNodes[8].InnerText.Trim() == string.Empty // old games runes were inventory items, sometimes people forgot to pick them up...elliptic.
 						? "0"
 						: win.ChildNodes[8].InnerText);
-				w.Version = win.ChildNodes[10].InnerText;
+				w.Version = new Version(win.ChildNodes[10].InnerText);
 
 				Wins.Add(w);
 			}
