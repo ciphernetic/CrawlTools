@@ -12,19 +12,7 @@ namespace Crawl.Scraper
 		/// <returns>True if players has won with every god.</returns>
 		public static bool IsPolytheist(List<Win> wins)
 		{
-			God gods = 0;
-
-			foreach(God g in Enum.GetValues(typeof(God)).Cast<God>())
-			{
-				if(null != wins.FirstOrDefault(w =>
-					w.God.Replace(" ", string.Empty) ==
-					(g == God.NoGod ? string.Empty : g.ToString())))
-				{
-					gods |= g;
-				}
-			}
-
-			return gods == God.All;
+			return God.All == PlayerUtils.GetWonGods(wins);
 		}
 
 		/// <summary>
