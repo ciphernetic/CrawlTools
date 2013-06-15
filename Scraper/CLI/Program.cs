@@ -31,10 +31,6 @@ namespace Crawl.Scraper.CLI
 				Achievements.IsGoodPlayer(player.Wins));
 			sb.AppendFormat("Is polytheist: {0}\n",
 				Achievements.IsPolytheist(player.Wins));
-			sb.AppendFormat("Is 0.12 great player: {0}\n",
-				PlayerUtils.GetWonSpecies(player.Wins) == Species.Version12);
-			sb.AppendFormat("Is 0.13 great player: {0}\n",
-				PlayerUtils.GetWonSpecies(player.Wins) == Species.Version13);
 			sb.AppendFormat("Unique combos won: {0}\n",
 				player.Wins.Select(w => w.Character).Distinct().Count());
 			sb.AppendFormat("Unique gods won: {0}\n",
