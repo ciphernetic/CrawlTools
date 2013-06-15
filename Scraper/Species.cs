@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Crawl.Scraper
 {
-	class Species
+	public class Species
 	{
 		/// <summary>
 		/// Full name.
