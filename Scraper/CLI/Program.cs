@@ -33,6 +33,8 @@ namespace Crawl.Scraper.CLI
 				Achievements.IsPolytheist(player.Wins));
 			sb.AppendFormat("Unique combos won: {0}\n",
 				player.Wins.Select(w => w.Character).Distinct().Count());
+			sb.AppendFormat("Unique gods won: {0}\n",
+				PlayerUtils.GetWonGods(player.Wins));
 
 			return sb.ToString();
 		}
