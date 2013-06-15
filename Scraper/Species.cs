@@ -47,7 +47,7 @@ namespace Crawl.Scraper
 		/// <param name="shortName">Abbreviation.</param>
 		/// <param name="active">Still playable.</param>
 		public Species(string name, string shortName, bool active)
-			: this(name, shortName, "0.0.0", active)
+			: this(name, shortName, "0.1.0", active)
 		{
 		}
 	}
