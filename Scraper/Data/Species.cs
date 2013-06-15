@@ -25,7 +25,7 @@ namespace Crawl.Scraper.Data
 					{"SE", new C.Species("Sludge Elf", "SE","0.1.0","0.12.2", false)},
 					{"HD", new C.Species("Hill Dwarf", "HD","0.1.0","0.2.7", false)},
 					{"MD", new C.Species("Mountain Dwarf", "MD","0.1.0","0.9.2", false)},
-					{"DD", new C.Species("Deep Dwarf", "DD")},
+					{"DD", new C.Species("Deep Dwarf", "DD", "0.5.0")},
 					{"HO", new C.Species("Hill Orc", "HO")},
 					{"Mf", new C.Species("Merfolk", "Mf")},
 					{"Ha", new C.Species("Halfling", "Ha")},
