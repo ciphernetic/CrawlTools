@@ -20,6 +20,10 @@ namespace Crawl.Scraper
 		/// </summary>
 		public Version FirstVersion { get; private set; }
 		/// <summary>
+		/// Last playable version.
+		/// </summary>
+		public Version LastVersion { get; private set; }
+		/// <summary>
 		/// Still playable.
 		/// </summary>
 		public bool Active { get; private set; }
@@ -32,11 +36,12 @@ namespace Crawl.Scraper
 		/// <param name="firstVersion">First playable version.</param>
 		/// <param name="active">Still playable.</param>
 		public Species(string name, string shortName, Version firstVersion,
-			bool active)
+			Version lastVersion, bool active)
 		{
 			Name = name;
 			ShortName = shortName;
 			FirstVersion = firstVersion;
+			LastVersion = lastVersion;
 			Active = active;
 		}
 
@@ -48,19 +53,29 @@ namespace Crawl.Scraper
 		/// <param name="firstVersion">First playable version.</param>
 		/// <param name="active">Still playable.</param>
 		public Species(string name, string shortName, string firstVersion,
-			bool active)
-			: this(name, shortName, new Version(firstVersion), active)
+			string lastVersion, bool active)
+			: this(name, shortName, new Version(firstVersion),
+				new Version(lastVersion), active)
 		{
 		}
 
 		/// <summary>
-		/// Constructor with default version of 0.0.0.
+		/// Constructor with default version of 0.0.0 and still active.
 		/// </summary>
 		/// <param name="name">Full name.</param>
 		/// <param name="shortName">Abbreviation.</param>
-		/// <param name="active">Still playable.</param>
-		public Species(string name, string shortName, bool active)
-			: this(name, shortName, new Version("0.1.0"), active)
+		public Species(string name, string shortName)
+			: this(name, shortName, new Version("0.1.0"), null, true)
+		{
+		}
+
+		/// <summary>
+		/// Constructor for new still active species..
+		/// </summary>
+		/// <param name="name">Full name.</param>
+		/// <param name="shortName">Abbreviation.</param>
+		public Species(string name, string shortName, string firstVersion)
+			: this(name, shortName, new Version(firstVersion), null, true)
 		{
 		}
 	}
