@@ -50,6 +50,15 @@ namespace Crawl.Scraper
 		}
 
 		/// <summary>
+		/// Determines if the player has won at least 10 games.
+		/// </summary>
+		/// <returns>True if player has won 10 or more games.</returns>
+		public bool IsGoodPlayer()
+		{
+			return Wins.Count >= 10;
+		}
+
+		/// <summary>
 		/// Loads page.
 		/// </summary>
 		/// <returns>Returns loaded page.</returns>
