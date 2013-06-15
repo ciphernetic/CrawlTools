@@ -51,6 +51,7 @@
     <Compile Include="PlayerUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Species.cs" />
+    <Compile Include="Version.cs" />
     <Compile Include="Win.cs" />
   </ItemGroup>
   <ItemGroup>

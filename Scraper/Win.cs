@@ -15,7 +15,7 @@ namespace Crawl.Scraper
 		public string God { get; set; }
 		public int NumberOfRunes { get; set; }
 		public DateTime CompleteDate { get; set; }
-		public string Version { get; set; }
+		public Version Version { get; set; }
 
 		public Win()
 		{
@@ -32,7 +32,7 @@ namespace Crawl.Scraper
 			God = god;
 			NumberOfRunes = numberOfRunes;
 			//CompleteDate = completeDate;
-			Version = version;
+			Version = new Version(version);
 		}
 	}
 }
