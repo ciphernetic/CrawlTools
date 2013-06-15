@@ -39,8 +39,6 @@ namespace Crawl.Scraper.CLI
 				player.Wins.Select(w => w.Character).Distinct().Count());
 			sb.AppendFormat("Unique gods won: {0}\n",
 				PlayerUtils.GetWonGods(player.Wins));
-			sb.AppendFormat("Unique species won: {0}\n",
-				PlayerUtils.GetWonSpecies(player.Wins));
 
 			return sb.ToString();
 		}
