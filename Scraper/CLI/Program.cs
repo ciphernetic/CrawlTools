@@ -14,6 +14,8 @@ namespace Crawl.Scraper.CLI
 			{
 				PlayerStats player = new PlayerStats(args[0]);
 				Console.WriteLine(BuildReport(player));
+				Console.WriteLine();
+				Console.WriteLine(WinsReport(player));
 			}
 			else
 			{
@@ -39,6 +41,17 @@ namespace Crawl.Scraper.CLI
 				string.Join(", ", PlayerUtils.GetWonSpecies(player.Wins)
 					.Select(s => s.ShortName).OrderBy(s => s)));
 
+			return sb.ToString();
+		}
+
+		static string WinsReport(PlayerStats player)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach(Win win in player.Wins.OrderBy(w => w.Version))
+			{
+				sb.AppendFormat("Combo: {0}, Runes: {1}, Version {2}\n",
+					win.Character, win.NumberOfRunes, win.Version);
+			}
 			return sb.ToString();
 		}
 	}
