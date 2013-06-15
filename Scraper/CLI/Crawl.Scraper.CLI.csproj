@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Crawl.Scraper.CLI</RootNamespace>
-    <AssemblyName>Crawl.Scraper.CLI</AssemblyName>
+    <AssemblyName>CrawlScraper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
