@@ -10,8 +10,16 @@ namespace Crawl.Scraper.CLI
 	{
 		static void Main(string[] args)
 		{
-			PlayerStats player = new PlayerStats("palyth");
-			Console.WriteLine(BuildReport(player));
+			if(1 == args.Length)
+			{
+				PlayerStats player = new PlayerStats(args[0]);
+				Console.WriteLine(BuildReport(player));
+			}
+			else
+			{
+				Console.Error.WriteLine("{0} <player name>",
+					typeof(Program).Assembly.GetName().Name);
+			}
 		}
 
 		static string BuildReport(PlayerStats player)
