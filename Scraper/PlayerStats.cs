@@ -29,36 +29,6 @@ namespace Crawl.Scraper
 		}
 
 		/// <summary>
-		/// Determines if the player has one with every available god.
-		/// </summary>
-		/// <returns>True if players has won with every god.</returns>
-		public bool IsPolytheist()
-		{
-			God gods = 0;
-
-			foreach(God g in Enum.GetValues(typeof(God)).Cast<God>())
-			{
-				if(null != Wins.FirstOrDefault(w => 
-					w.God.Replace(" ", string.Empty) == 
-					(g == God.NoGod ? string.Empty : g.ToString())))
-				{
-					gods |= g;
-				}
-			}
-
-			return gods == God.All;
-		}
-
-		/// <summary>
-		/// Determines if the player has won at least 10 games.
-		/// </summary>
-		/// <returns>True if player has won 10 or more games.</returns>
-		public bool IsGoodPlayer()
-		{
-			return Wins.Count >= 10;
-		}
-
-		/// <summary>
 		/// Loads page.
 		/// </summary>
 		/// <returns>Returns loaded page.</returns>

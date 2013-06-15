@@ -27,8 +27,10 @@ namespace Crawl.Scraper.CLI
 			StringBuilder sb = new StringBuilder();
 			sb.AppendFormat("Player: {0}\n", player.PlayerName);
 			sb.AppendFormat("Number of wins: {0}\n", player.Wins.Count);
-			sb.AppendFormat("Is good player: {0}\n", player.IsGoodPlayer());
-			sb.AppendFormat("Is polytheist: {0}\n", player.IsPolytheist());
+			sb.AppendFormat("Is good player: {0}\n",
+				Achievements.IsGoodPlayer(player.Wins));
+			sb.AppendFormat("Is polytheist: {0}\n",
+				Achievements.IsPolytheist(player.Wins));
 			sb.AppendFormat("Unique combos won: {0}\n",
 				player.Wins.Select(w => w.Character).Distinct().Count());
 
