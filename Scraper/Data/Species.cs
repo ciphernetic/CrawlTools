@@ -9,6 +9,10 @@ namespace Crawl.Scraper.Data
 {
 	public static class Species
 	{
+		/// <summary>
+		/// Dictionary of all species keyed on abbreviation.
+		/// </summary>
+		/// <returns>Dictionary of species info.</returns>
 		public static Dictionary<string, C.Species> GetSpecies()
 		{
 			return new Dictionary<string, C.Species>()
