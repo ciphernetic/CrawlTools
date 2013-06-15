@@ -44,29 +44,29 @@ namespace Crawl.Scraper
 				{
 					if(this.Revision > other.Revision)
 					{
-						return -1;
+						return 1;
 					}
 					else if(this.Revision < other.Revision)
 					{
-						return 1;
+						return -1;
 					}
 				}
 				else if(this.Minor > other.Minor)
 				{
-					return -1;
+					return 1;
 				}
 				else
 				{
-					return 1;
+					return -1;
 				}
 			}
 			else if(this.Major > other.Major)
 			{
-				return -1;
+				return 1;
 			}
 			else
 			{
-				return 1;
+				return -1;
 			}
 
 			return 0;
